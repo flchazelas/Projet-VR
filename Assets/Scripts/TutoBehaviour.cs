@@ -12,6 +12,8 @@ public class TutoBehaviour : MonoBehaviour
     GameObject b1;
     GameObject b2;
     GameObject canvas;
+    GameObject plateforme;
+    GameObject player;
 
     TMP_Text consigne;
     Image cercle;
@@ -36,6 +38,10 @@ public class TutoBehaviour : MonoBehaviour
         cercle1 = canvas.transform.Find("Cercle 1").GetComponent<Image>();
         cercle.enabled = false;
         cercle1.enabled = false;
+
+        player = GameObject.Find("Player");
+        plateforme = GameObject.Find("Area plateforme (6)");
+        plateforme.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,7 +66,7 @@ public class TutoBehaviour : MonoBehaviour
             else if(fin)
             {
                 GameVariables.lockAccroupi = false;
-                consigne.text = "Entrainez-vous à vous accroupir et à sauter ! \n Ensuite en jeu, regardez à droite et à gauche pour vous déplacer dans ces directions !";
+                consigne.text = "Entrainez-vous à vous accroupir et à sauter ! \n Ensuite en jeu, regardez à droite et à gauche pour vous déplacer dans ces directions ! \n Vous avez 30 secondes de test !";
                 StartCoroutine("Timer", 10f);
             }
         }
@@ -82,7 +88,6 @@ public class TutoBehaviour : MonoBehaviour
         {
             fait = true;
             cercle1.enabled = false;
-            StartCoroutine("TimerSaut", 2f);
             bas = true;
         }
     }
@@ -97,7 +102,7 @@ public class TutoBehaviour : MonoBehaviour
         {
             fait = true;
             cercle.enabled = false;
-            StartCoroutine("TimerSaut", 2f);
+            StartCoroutine("TimerSaut", 1f);
             consigne.text = "";
             haut = true;
         }
@@ -115,6 +120,7 @@ public class TutoBehaviour : MonoBehaviour
             fait = true;
             cercle.enabled = false;
             saut = false;
+            fin = true;
         }
     }
 
@@ -122,7 +128,6 @@ public class TutoBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         saut = true;
-        fin = true;
     }
     
     IEnumerator Timer(float time)
@@ -130,6 +135,23 @@ public class TutoBehaviour : MonoBehaviour
         yield return new WaitForSeconds(time);
         isTuto = false;
         consigne.text = "";
+        canvas.SetActive(false);
+        GameVariables.lockBouge = false;
+        GameVariables.lockSaut = false;
+        GameVariables.lockAccroupi = false;
+        plateforme.SetActive(true);
+        StartCoroutine("Tuto", 30f);
+    }
+
+    IEnumerator Tuto(float time)
+    {
+        yield return new WaitForSeconds(time);
+        canvas.SetActive(true);
+        GameVariables.lockBouge = true;
+        GameVariables.lockSaut = true;
+        GameVariables.lockAccroupi = true;
+        player.transform.position = new Vector3(transform.position.x, 1, transform.position.z);
+        plateforme.SetActive(false);
         b1.SetActive(true);
         b2.SetActive(true);
     }
