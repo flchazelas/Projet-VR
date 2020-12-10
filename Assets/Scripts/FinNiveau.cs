@@ -17,14 +17,14 @@ public class FinNiveau : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            GameVariables.niveauEnCours += 1;
+            GameVariables.niveauEnCours++;
             image.SetActive(true);
             GameVariables.lockBouge = true;
             image.GetComponent<Animation>().Play("Image degradee");

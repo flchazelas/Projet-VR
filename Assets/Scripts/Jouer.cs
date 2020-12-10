@@ -16,9 +16,9 @@ public class Jouer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*GameVariables.lockBouge = false;
+        GameVariables.lockBouge = false;
         GameVariables.lockSaut = false;
-        GameVariables.lockAccroupi = false;*/
+        GameVariables.lockAccroupi = false;
         canvas = GameObject.Find("Canvas Tuto");
         nbVie = GameObject.Find("NbVie").GetComponent<Text>();
 

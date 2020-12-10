@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6355692813550182630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7, y: 1.5, z: -20}
-  m_LocalScale: {x: 4, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 7, y: 0.5, z: -20}
+  m_LocalScale: {x: 4, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 6355692813664475563}
   m_RootOrder: 0
@@ -102,11 +102,11 @@ Animation:
   m_GameObject: {fileID: 6355692813550182630}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 8735b8e590b023645b53914160212d63, type: 2}
+  m_Animation: {fileID: 7400000, guid: f009dd667ba8b534daa35fefb83379e7, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 8735b8e590b023645b53914160212d63, type: 2}
+  - {fileID: 7400000, guid: f009dd667ba8b534daa35fefb83379e7, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!114 &6355692813550182637
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6355692813664475563}
   m_Layer: 0
-  m_Name: Pic Mouvant
+  m_Name: Pic Mouvant Bas droit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
