@@ -24,6 +24,7 @@ public class FinNiveau : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameVariables.niveauEnCours += 1;
             image.SetActive(true);
             GameVariables.lockBouge = true;
             image.GetComponent<Animation>().Play("Image degradee");

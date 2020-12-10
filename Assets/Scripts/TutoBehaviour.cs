@@ -40,7 +40,7 @@ public class TutoBehaviour : MonoBehaviour
         cercle1.enabled = false;
 
         player = GameObject.Find("Player");
-        plateforme = GameObject.Find("Area plateforme (6)");
+        plateforme = GameObject.Find("Area plateforme (1)");
         plateforme.SetActive(false);
     }
 
@@ -49,8 +49,6 @@ public class TutoBehaviour : MonoBehaviour
     {
         if (isTuto)
         {
-            b1.SetActive(false);
-            b2.SetActive(false);
             if (!bas) {
                 regarderEnBas();
             }
@@ -75,7 +73,8 @@ public class TutoBehaviour : MonoBehaviour
     public void setIsTuto()
     {
         isTuto = true;
-        print(isTuto);
+        b1.SetActive(false);
+        b2.SetActive(false);
     }
 
     public void regarderEnBas() {
@@ -132,8 +131,8 @@ public class TutoBehaviour : MonoBehaviour
     
     IEnumerator Timer(float time)
     {
-        yield return new WaitForSeconds(time);
         isTuto = false;
+        yield return new WaitForSeconds(time);
         consigne.text = "";
         canvas.SetActive(false);
         GameVariables.lockBouge = false;

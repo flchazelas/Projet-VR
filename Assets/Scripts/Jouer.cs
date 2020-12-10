@@ -16,6 +16,9 @@ public class Jouer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*GameVariables.lockBouge = false;
+        GameVariables.lockSaut = false;
+        GameVariables.lockAccroupi = false;*/
         canvas = GameObject.Find("Canvas Tuto");
         nbVie = GameObject.Find("NbVie").GetComponent<Text>();
 
@@ -63,7 +66,7 @@ public class Jouer : MonoBehaviour
         image.SetActive(true);
         image.GetComponent<Animation>().Play();
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("Scenes/Niveau 1");
+        SceneManager.LoadScene("Scenes/Niveau "+GameVariables.niveauEnCours);
     }
 
     IEnumerator Timer2(float time)

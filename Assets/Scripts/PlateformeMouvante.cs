@@ -18,14 +18,14 @@ public class PlateformeMouvante : MonoBehaviour
     private Vector3 position;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         routeToGo = 0;
         tParam = 0f;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         move();
     }
