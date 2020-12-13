@@ -3171,6 +3171,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2224733684108341747, guid: ec63d26889cf4304d890e685a9663068,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224733684826557012, guid: ec63d26889cf4304d890e685a9663068,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95
+      objectReference: {fileID: 0}
     - target: {fileID: 2224733684108341756, guid: ec63d26889cf4304d890e685a9663068,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3373,16 +3383,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 667d930ad4aa6d242bc454b8df66c610, type: 2}
-    - target: {fileID: 2224733684108341747, guid: ec63d26889cf4304d890e685a9663068,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 2224733684826557012, guid: ec63d26889cf4304d890e685a9663068,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec63d26889cf4304d890e685a9663068, type: 3}
 --- !u!1001 &1077336169
@@ -4458,6 +4458,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vide Trou (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7177641904869489357, guid: c51ae1da7749e6545abbd3f941640844,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7177641904957919938, guid: c51ae1da7749e6545abbd3f941640844,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7177641905012864956, guid: c51ae1da7749e6545abbd3f941640844,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4512,16 +4522,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7177641904869489357, guid: c51ae1da7749e6545abbd3f941640844,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7177641904957919938, guid: c51ae1da7749e6545abbd3f941640844,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7177641904961954198, guid: c51ae1da7749e6545abbd3f941640844,
         type: 3}

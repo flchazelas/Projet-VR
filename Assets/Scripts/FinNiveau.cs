@@ -24,11 +24,23 @@ public class FinNiveau : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameVariables.niveauEnCours++;
-            image.SetActive(true);
-            GameVariables.lockBouge = true;
-            image.GetComponent<Animation>().Play("Image degradee");
-            StartCoroutine("Timer");
+            if(GameVariables.niveauEnCours != 5)
+            {
+                GameVariables.niveauEnCours++;
+                image.SetActive(true);
+                GameVariables.lockBouge = true;
+                image.GetComponent<Animation>().Play("Image degradee");
+                StartCoroutine("Timer");
+            }
+            else
+            {
+                GameVariables.niveauEnCours = 0;
+                image.SetActive(true);
+                GameVariables.lockBouge = true;
+                image.GetComponent<Animation>().Play("Image degradee");
+                GameObject.Find("Fin").GetComponent<Text>().enabled = true;
+                StartCoroutine("Timer2");
+            }
         }
     }
 
@@ -36,5 +48,12 @@ public class FinNiveau : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Scenes/Niveau " + GameVariables.niveauEnCours);
+    }
+
+    IEnumerator Timer2()
+    {
+        yield return new WaitForSeconds(10);
+        GameObject.Find("Fin").GetComponent<Text>().enabled = false;
+        SceneManager.LoadScene("Scenes/SampleScene");
     }
 }
