@@ -37,7 +37,8 @@ public class FinNiveau : MonoBehaviour
                 GameVariables.niveauEnCours = 0;
                 image.SetActive(true);
                 GameVariables.lockBouge = true;
-                image.GetComponent<Animation>().Play("Image degradee");
+                image.GetComponent<Animation>().Play("Image degradee"); 
+                GameObject.Find("Fin").GetComponent<Text>().text = "Félicitation !\nVous avez fini le jeu !\nVotre score est de "+GameVariables.currentTime + " points";
                 GameObject.Find("Fin").GetComponent<Text>().enabled = true;
                 StartCoroutine("Timer2");
             }
@@ -53,6 +54,7 @@ public class FinNiveau : MonoBehaviour
     IEnumerator Timer2()
     {
         yield return new WaitForSeconds(10);
+        GameVariables.currentTime = GameVariables.allowedTime;
         GameObject.Find("Fin").GetComponent<Text>().enabled = false;
         SceneManager.LoadScene("Scenes/SampleScene");
     }

@@ -12,6 +12,8 @@ public class Jouer : MonoBehaviour
     GameObject image;
 
     Text nbVie;
+    Text timer;
+    bool time = true;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +21,10 @@ public class Jouer : MonoBehaviour
         GameVariables.lockBouge = false;
         GameVariables.lockSaut = false;
         GameVariables.lockAccroupi = false;
-        GameVariables.niveauEnCours = 2;
+        GameVariables.niveauEnCours = 5;
         canvas = GameObject.Find("Canvas Tuto");
         nbVie = GameObject.Find("NbVie").GetComponent<Text>();
+        timer = GameObject.Find("Timer").GetComponent<Text>();
 
         image = GameObject.Find("Image degradee");
         image.SetActive(false);
@@ -37,7 +40,11 @@ public class Jouer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        nbVie.text = "Nombre de vie : "+GameVariables.nbVie;
+        if(GameVariables.niveauEnCours != 0)
+        {
+            nbVie.text = "Nombre de vie : " + GameVariables.nbVie;
+            timer.text = "Timer : " + GameVariables.currentTime;
+        }
 
         if (GameVariables.nbVie <= 0)
         {
@@ -48,6 +55,12 @@ public class Jouer : MonoBehaviour
             GameVariables.nbVie = 3;
             SceneManager.LoadScene("Niveau " + GameVariables.niveauEnCours);
             StartCoroutine("Timer3", 2f);
+        }
+
+        if (time && GameVariables.niveauEnCours != 0)
+        {
+            time = false;
+            StartCoroutine("TimerGlobal");
         }
     }
 
@@ -96,5 +109,12 @@ public class Jouer : MonoBehaviour
         GameVariables.lockSaut = false;
         GameVariables.lockAccroupi = false;
         /*SceneManager.LoadScene("Niveau " + GameVariables.niveauEnCours);*/
+    }
+
+    IEnumerator TimerGlobal()
+    {
+        yield return new WaitForSeconds(1);
+        GameVariables.currentTime++;
+        time = true;
     }
 }

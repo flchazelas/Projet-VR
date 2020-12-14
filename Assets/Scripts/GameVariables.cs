@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class GameVariables
 {
-    public static int allowedTime = 10;
+    public static int allowedTime = 0;
     public static int currentTime = GameVariables.allowedTime;
 
     public static int nbVie = 3;
