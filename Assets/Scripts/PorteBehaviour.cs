@@ -5,6 +5,7 @@ using UnityEngine;
 public class PorteBehaviour : MonoBehaviour
 {
     Animation anim;
+    public ParticleSystem fumee;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,6 @@ public class PorteBehaviour : MonoBehaviour
     public void activer()
     {
         anim.Play();
+        fumee.Play();
     }
 }

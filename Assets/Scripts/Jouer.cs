@@ -19,7 +19,7 @@ public class Jouer : MonoBehaviour
         GameVariables.lockBouge = false;
         GameVariables.lockSaut = false;
         GameVariables.lockAccroupi = false;
-        GameVariables.niveauEnCours = 5;
+        GameVariables.niveauEnCours = 2;
         canvas = GameObject.Find("Canvas Tuto");
         nbVie = GameObject.Find("NbVie").GetComponent<Text>();
 
