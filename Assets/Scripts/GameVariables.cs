@@ -9,6 +9,7 @@ public static class GameVariables
 
     public static int nbVie = 3;
     public static int niveauEnCours = 0;
+    public static int score = 0;
     
     //Blocage des différentes actions
     public static bool lockSaut = true;

@@ -18,10 +18,10 @@ public class Jouer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameVariables.lockBouge = false;
+        /*GameVariables.lockBouge = false;
         GameVariables.lockSaut = false;
         GameVariables.lockAccroupi = false;
-        GameVariables.niveauEnCours = 5;
+        GameVariables.niveauEnCours = 5;*/
         canvas = GameObject.Find("Canvas Tuto");
         nbVie = GameObject.Find("NbVie").GetComponent<Text>();
         timer = GameObject.Find("Timer").GetComponent<Text>();
@@ -34,6 +34,11 @@ public class Jouer : MonoBehaviour
             image.GetComponent<Animation>().clip = image.GetComponent<Animation>().GetClip("Image degradee inversee");
             image.GetComponent<Animation>().Play();
             StartCoroutine("Timer2", 2f);
+        }
+        else
+        {
+            nbVie.enabled = false;
+            timer.enabled = false;
         }
     }
 
